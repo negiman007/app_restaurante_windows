@@ -9,30 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using APPRESTAURANTE.Entidades;
 using APPRESTAURANTE.BaseDatos;
-
+using APPRESTAURANTE.Entidades.Enum;
 
 namespace APPRESTAURANTE
 {
     public partial class frmEmpleado : Form
     {
-        //ListaGenerica<Empleado> listaNodo = new ListaGenerica<Empleado>();
-        //string ruta = @"D:\\Cursos\\UPN\\bd_Empleado.json";
-        //ruta = "D:\\Cursos\\UPN\\bd_Empleado.json";
-        //string rutaArchivo = @"D:\Cursos\UPN\5 CICLO\ESTRUCTURA DE DATOS\Grupo_3\APPRESTAURANTE\BD_APPRESTAURANTE\";
-        //string archivo = "bd_Empleado.json";
-        //string rutaCompleta = $"@"D:\Cursos\UPN\5 CICLO\ESTRUCTURA DE DATOS\Grupo_3\APPRESTAURANTE\BD_APPRESTAURANTE\" {archivo}";
-        ListaGenerica<Empleado> listaNodo = new ListaGenerica<Empleado>(@"D:\Cursos\UPN\BD\bdEmpleado.json");
+
+
+        ListaGenerica<Empleado> listaNodo = new ListaGenerica<Empleado>(@"D:\Json\bdEmpleado.json");
+        
         //ListaGenerica<Empleado> listaNodo = new ListaGenerica<Empleado>("bd_Empleado.json");
         //BaseDatos<Empleado> bd = new BaseDatos<Empleado>("bdEmpleado.json");
         public frmEmpleado()
         {
             InitializeComponent();
-            //string ruta = "D:\\Cursos\\UPN\\bd_Empleado.json";
-            //ListaGenerica<Empleado> listaNodo = new ListaGenerica<Empleado>(ruta);
             listaNodo.Cargar();
             mostrarEmpleado(listaNodo.listaObjeto);
-            //bd.Cargar();
-            //mostrarEmpleado(bd.valores);
+            LimpiarDatos();
+            CargarValores();
         }
 
         private void frmEmpleado_Load(object sender, EventArgs e)
@@ -43,39 +38,26 @@ namespace APPRESTAURANTE
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             Empleado empleado = new Empleado();
-            empleado.idEmpleado = int.Parse((new Random()).Next(100000, 999999).ToString());//(new Random()).Next(10000000, 99999999);
+            empleado.idEmpleado = int.Parse(txtCodigoEmpleado.Text);
             empleado.nombre = txtNombreEmpleado.Text;
             empleado.apellidoPaterno = txtApellidoPaternoEmpleado.Text;
             empleado.apellidoMaterno = txtApellidoMaternoEmpleado.Text;
             empleado.direccion = txtDireccion.Text;
-            empleado.tipoDocumento = txtTipoDocumento.Text;
+            empleado.tipoDocumento = cboTipoDocumento.SelectedIndex.ToString();
             empleado.documento = txtDocumento.Text;
+            bool flag = cboEstado.SelectedIndex == 0 ? false : true;
+            empleado.estado = flag;
 
-            /*Mascota.TIPO t;
-            switch (cbmascota.SelectedIndex)
-            {
-                case 1: t = Mascota.TIPO.PERRO; break;
-                case 2: t = Mascota.TIPO.GATO; break;
-                case 3: t = Mascota.TIPO.PEZ; break;
-                default: t = Mascota.TIPO.NINGUNA; break;
-            }
-
-            Mascota m = new Mascota(txtmascota.Text, t);
-            Persona p = new Persona((new Random()).Next(10000000, 99999999), txtnombre.Text, m);*/
-            //listaNodo.InsertarProveedor(new Proveedor(codigoProveedor, ruc, razon, nombreContacto, telefonoContacto, celularContacto, emailContacto));
             listaNodo.InsertarObjeto(empleado);
-            //ImprimirLista();
-            //ImprimirListaEmpleado();
             mostrarEmpleado(listaNodo.listaObjeto);
-            //mostrarEmpleado(listaNodo.listaObjeto);
-            //bd.Insertar(empleado);
-            //mostrarEmpleado(bd.valores);
-            //mostrarEmpleado(listaNodo.GenerarListaGenerica);
+            LimpiarDatos();
+            CargarValores();
+
         }
 
         private void btnConsultaEmp_Click(object sender, EventArgs e)
         {
-
+            mostrarEmpleado(listaNodo.listaObjeto);
         }
 
         public void mostrarEmpleado(List<Empleado> lista)
@@ -91,7 +73,16 @@ namespace APPRESTAURANTE
                 fila.Cells.Add(new DataGridViewTextBoxCell() { Value = p.apellidoMaterno });
                 fila.Cells.Add(new DataGridViewTextBoxCell() { Value = p.direccion });
                 fila.Cells.Add(new DataGridViewTextBoxCell() { Value = p.tipoDocumento });
+                fila.Cells.Add(new DataGridViewTextBoxCell() 
+                { 
+                    Value = (int.Parse(p.tipoDocumento) == (int)TipoDocumento.DNI) ? TipoDocumento.DNI.ToString() 
+                            : (int.Parse(p.tipoDocumento) == (int)TipoDocumento.CARNET_EXTRANJERIA) 
+                            ? TipoDocumento.CARNET_EXTRANJERIA.ToString() : "SIN DATO" 
+                }
+                );
                 fila.Cells.Add(new DataGridViewTextBoxCell() { Value = p.documento });
+                fila.Cells.Add(new DataGridViewTextBoxCell() { Value = p.estado });
+                fila.Cells.Add(new DataGridViewTextBoxCell() { Value = ((p.estado) ? "Activo" : "Inactivo" ) });
                 dgvEmpleados.Rows.Add(fila);
             }
 
@@ -149,24 +140,16 @@ namespace APPRESTAURANTE
                 txtApellidoPaternoEmpleado.Text = dgvEmpleados.SelectedRows[0].Cells[2].Value.ToString();
                 txtApellidoMaternoEmpleado.Text = dgvEmpleados.SelectedRows[0].Cells[3].Value.ToString();
                 txtDireccion.Text = dgvEmpleados.SelectedRows[0].Cells[4].Value.ToString();
-                txtTipoDocumento.Text = dgvEmpleados.SelectedRows[0].Cells[5].Value.ToString();
-                txtDocumento.Text = dgvEmpleados.SelectedRows[0].Cells[6].Value.ToString();
-
-                /*
-                empleado.idEmpleado = int.Parse((new Random()).Next(100000, 999999).ToString());//(new Random()).Next(10000000, 99999999);
-                empleado.nombre = txtNombreEmpleado.Text;
-                empleado.apellidoPaterno = txtApellidoPaternoEmpleado.Text;
-                empleado.apellidoMaterno = txtApellidoMaternoEmpleado.Text;
-                empleado.direccion = txtDireccion.Text;
-                empleado.tipoDocumento = txtTipoDocumento.Text;
-                empleado.documento = txtDocumento.Text;
-                */
+                cboTipoDocumento.SelectedIndex = int.Parse(dgvEmpleados.SelectedRows[0].Cells[5].Value.ToString());
+                //txtTipoDocumento.Text = dgvEmpleados.SelectedRows[0].Cells[5].Value.ToString();
+                txtDocumento.Text = dgvEmpleados.SelectedRows[0].Cells[7].Value.ToString();
+                bool flag = bool.Parse(dgvEmpleados.SelectedRows[0].Cells[8].Value.ToString());
+                cboEstado.SelectedIndex = (flag) ? (int)Estado.activo: (int)Estado.inactivo;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
 
@@ -178,24 +161,41 @@ namespace APPRESTAURANTE
             empleado.apellidoPaterno = txtApellidoPaternoEmpleado.Text;
             empleado.apellidoMaterno = txtApellidoMaternoEmpleado.Text;
             empleado.direccion = txtDireccion.Text;
-            empleado.tipoDocumento = txtTipoDocumento.Text;
+            empleado.tipoDocumento = cboTipoDocumento.SelectedIndex.ToString();
             empleado.documento = txtDocumento.Text;
+            bool flag = cboEstado.SelectedIndex == 0 ? false : true;
+            empleado.estado = flag;
             listaNodo.Actualizar(x => x.idEmpleado == int.Parse(txtCodigoEmpleado.Text), empleado);
             mostrarEmpleado(listaNodo.listaObjeto);
+            LimpiarDatos();
+            CargarValores();
+        }
 
-            /*int DNI = int.Parse(txtdni.Text);
-            Mascota.TIPO t;
-            switch (cbmascota.SelectedIndex)
+        private void LimpiarDatos()
+        {
+            txtCodigoEmpleado.Text = listaNodo.GenerarCorrelativoEmpleado().ToString();
+            //txtCodigoEmpleado.Text = String.Empty;
+            txtNombreEmpleado.Text = String.Empty;
+            txtApellidoPaternoEmpleado.Text = String.Empty;
+            txtApellidoMaternoEmpleado.Text = String.Empty;
+            txtDireccion.Text = String.Empty;
+            txtDocumento.Text = String.Empty;
+            cboEstado.Items.Clear();
+            cboTipoDocumento.Items.Clear();
+        }
+
+        public void CargarValores()
+        {
+            foreach (var item in Enum.GetValues(typeof(Estado)))
             {
-                case 1: t = Mascota.TIPO.PERRO; break;
-                case 2: t = Mascota.TIPO.GATO; break;
-                case 3: t = Mascota.TIPO.PEZ; break;
-                default: t = Mascota.TIPO.NINGUNA; break;
+                cboEstado.Items.Add(item);
             }
-            Mascota m = new Mascota(txtmascota.Text, t);
-            Persona p = new Persona(DNI, txtnombre.Text, m);*/
-            //bd.Actualizar(x => x.DNI == DNI, p);
-            //mostrar(bd.valores);
+
+            foreach (var item in Enum.GetValues(typeof(TipoDocumento)))
+            {
+                cboTipoDocumento.Items.Add(item);
+            }
+
         }
     }
 }

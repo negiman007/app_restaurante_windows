@@ -51,6 +51,9 @@
   <ItemGroup>
     <Compile Include="BaseDatos\BaseDatos.cs" />
     <Compile Include="Entidades\Empleado.cs" />
+    <Compile Include="Entidades\Enum\Element.cs" />
+    <Compile Include="Entidades\Enum\Estado.cs" />
+    <Compile Include="Entidades\Enum\TipoDocumento.cs" />
     <Compile Include="Entidades\Lista.cs" />
     <Compile Include="Entidades\ListaGenerica.cs" />
     <Compile Include="Entidades\NodoGenerico.cs" />
