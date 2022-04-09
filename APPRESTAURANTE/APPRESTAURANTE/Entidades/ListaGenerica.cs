@@ -198,6 +198,14 @@ namespace APPRESTAURANTE.Entidades
             return numerador;
         }
 
+        public int GenerarCorrelativoEmpleado()
+        {
+            Random random = new Random();
+            int numerador = 0;
+            numerador = random.Next(10000000, 99999999);
+            return numerador;
+        }
+
         public List<T> GenerarListaGenericaEmpleado()
         {
             List<T> listaGenerica = new List<T>();

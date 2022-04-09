@@ -44,17 +44,21 @@
             this.txtApellidoPaternoEmpleado = new System.Windows.Forms.TextBox();
             this.txtApellidoMaternoEmpleado = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtTipoDocumento = new System.Windows.Forms.TextBox();
             this.txtDocumento = new System.Windows.Forms.TextBox();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.cboEstado = new System.Windows.Forms.ComboBox();
+            this.cboTipoDocumento = new System.Windows.Forms.ComboBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,11 +175,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(947, 195);
+            this.label6.Location = new System.Drawing.Point(936, 195);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 16);
+            this.label6.Size = new System.Drawing.Size(50, 16);
             this.label6.TabIndex = 13;
-            this.label6.Text = "label6";
+            this.label6.Text = "Estado";
             // 
             // txtApellidoPaternoEmpleado
             // 
@@ -198,13 +202,6 @@
             this.txtDireccion.Size = new System.Drawing.Size(100, 22);
             this.txtDireccion.TabIndex = 16;
             // 
-            // txtTipoDocumento
-            // 
-            this.txtTipoDocumento.Location = new System.Drawing.Point(765, 186);
-            this.txtTipoDocumento.Name = "txtTipoDocumento";
-            this.txtTipoDocumento.Size = new System.Drawing.Size(100, 22);
-            this.txtTipoDocumento.TabIndex = 17;
-            // 
             // txtDocumento
             // 
             this.txtDocumento.Location = new System.Drawing.Point(1036, 151);
@@ -223,7 +220,10 @@
             this.Column4,
             this.Column5,
             this.Column6,
-            this.Column7});
+            this.Column10,
+            this.Column7,
+            this.Column8,
+            this.Column9});
             this.dgvEmpleados.Location = new System.Drawing.Point(46, 338);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.RowHeadersWidth = 51;
@@ -231,6 +231,33 @@
             this.dgvEmpleados.Size = new System.Drawing.Size(1121, 348);
             this.dgvEmpleados.TabIndex = 19;
             this.dgvEmpleados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellDoubleClick);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.AutoSize = true;
+            this.btnModificar.Location = new System.Drawing.Point(627, 227);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(175, 46);
+            this.btnModificar.TabIndex = 20;
+            this.btnModificar.Text = "Modificar Empleado";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // cboEstado
+            // 
+            this.cboEstado.FormattingEnabled = true;
+            this.cboEstado.Location = new System.Drawing.Point(1036, 195);
+            this.cboEstado.Name = "cboEstado";
+            this.cboEstado.Size = new System.Drawing.Size(100, 24);
+            this.cboEstado.TabIndex = 21;
+            // 
+            // cboTipoDocumento
+            // 
+            this.cboTipoDocumento.FormattingEnabled = true;
+            this.cboTipoDocumento.Location = new System.Drawing.Point(765, 189);
+            this.cboTipoDocumento.Name = "cboTipoDocumento";
+            this.cboTipoDocumento.Size = new System.Drawing.Size(100, 24);
+            this.cboTipoDocumento.TabIndex = 22;
             // 
             // Column1
             // 
@@ -269,10 +296,18 @@
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Tipo de Documento";
+            this.Column6.HeaderText = "Tipo_Documento";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
-            this.Column6.Width = 142;
+            this.Column6.Visible = false;
+            this.Column6.Width = 140;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Tipo de Documento";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 142;
             // 
             // Column7
             // 
@@ -281,16 +316,20 @@
             this.Column7.Name = "Column7";
             this.Column7.Width = 160;
             // 
-            // btnModificar
+            // Column8
             // 
-            this.btnModificar.AutoSize = true;
-            this.btnModificar.Location = new System.Drawing.Point(627, 227);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(175, 46);
-            this.btnModificar.TabIndex = 20;
-            this.btnModificar.Text = "Modificar Empleado";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.Column8.HeaderText = "Estado";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Visible = false;
+            this.Column8.Width = 79;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Estado Empleado";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 133;
             // 
             // frmEmpleado
             // 
@@ -298,10 +337,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1224, 808);
+            this.Controls.Add(this.cboTipoDocumento);
+            this.Controls.Add(this.cboEstado);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.txtDocumento);
-            this.Controls.Add(this.txtTipoDocumento);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtApellidoMaternoEmpleado);
             this.Controls.Add(this.txtApellidoPaternoEmpleado);
@@ -345,16 +385,20 @@
         private System.Windows.Forms.TextBox txtApellidoPaternoEmpleado;
         private System.Windows.Forms.TextBox txtApellidoMaternoEmpleado;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtTipoDocumento;
         private System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.DataGridView dgvEmpleados;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.ComboBox cboEstado;
+        private System.Windows.Forms.ComboBox cboTipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }
