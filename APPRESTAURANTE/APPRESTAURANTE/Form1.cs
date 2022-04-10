@@ -29,5 +29,17 @@ namespace APPRESTAURANTE
             frmEmpleado empleadoVista = new frmEmpleado();
             empleadoVista.Show();
         }
+
+        private void mantenedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Usuarios usuarios = new Usuarios();
+            usuarios.Show();
+        }
     }
 }
