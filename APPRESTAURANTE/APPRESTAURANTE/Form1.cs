@@ -19,7 +19,6 @@ namespace APPRESTAURANTE
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Hola");
             Proveedores proveedores = new Proveedores();
             proveedores.Show();
         }
@@ -37,6 +36,11 @@ namespace APPRESTAURANTE
         }
 
         private void tsmiMesa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stmiPedidos_Click(object sender, EventArgs e)
         {
 
         }

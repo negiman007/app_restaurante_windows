@@ -38,6 +38,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.consumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stmiPedidos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,9 +117,18 @@
             // 
             // pedidoToolStripMenuItem
             // 
+            this.pedidoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stmiPedidos});
             this.pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
             this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.pedidoToolStripMenuItem.Text = "Pedido";
+            // 
+            // stmiPedidos
+            // 
+            this.stmiPedidos.Name = "stmiPedidos";
+            this.stmiPedidos.Size = new System.Drawing.Size(224, 26);
+            this.stmiPedidos.Text = "Generar Pedido";
+            this.stmiPedidos.Click += new System.EventHandler(this.stmiPedidos_Click);
             // 
             // Form1
             // 
@@ -148,6 +158,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem consumoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stmiPedidos;
     }
 }
 
