@@ -6,18 +6,11 @@ using System.Threading.Tasks;
 
 namespace APPRESTAURANTE.Entidades
 {
-    //class Nodo<T>
     class Nodo
     {
-        //public T proveedor;
-        //public Nodo<T> next;
         public Proveedor proveedor;
         public Nodo sgte;
 
-        /*public Nodo()
-        {
-            sgte = null;
-        }*/
         public Nodo(Proveedor proveedor, Nodo sgte)
         {
             this.proveedor = proveedor;

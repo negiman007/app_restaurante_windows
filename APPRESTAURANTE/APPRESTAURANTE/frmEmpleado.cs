@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using APPRESTAURANTE.Nodo;
 using APPRESTAURANTE.Entidades;
-using APPRESTAURANTE.BaseDatos;
 using APPRESTAURANTE.Entidades.Enum;
 
 namespace APPRESTAURANTE
@@ -62,6 +59,7 @@ namespace APPRESTAURANTE
 
         public void mostrarEmpleado(List<Empleado> lista)
         {
+            listaNodo.inicio = listaNodo.GenerarListaGenerico();
             dgvEmpleados.Rows.Clear();
 
             foreach (Empleado p in lista)

@@ -51,14 +51,16 @@
   <ItemGroup>
     <Compile Include="BaseDatos\BaseDatos.cs" />
     <Compile Include="Entidades\Empleado.cs" />
-    <Compile Include="Entidades\Enum\Element.cs" />
     <Compile Include="Entidades\Enum\Estado.cs" />
+    <Compile Include="Entidades\Enum\Rol.cs" />
     <Compile Include="Entidades\Enum\TipoDocumento.cs" />
     <Compile Include="Entidades\Lista.cs" />
-    <Compile Include="Entidades\ListaGenerica.cs" />
-    <Compile Include="Entidades\NodoGenerico.cs" />
+    <Compile Include="Nodo\ListaGenerica.cs" />
+    <Compile Include="Nodo\NodoGenerico.cs" />
+    <Compile Include="Entidades\Pedido.cs" />
     <Compile Include="Entidades\ProveedorList.cs" />
     <Compile Include="Entidades\Proveedor.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,11 +74,23 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBusquedaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBusquedaUsuario.Designer.cs">
+      <DependentUpon>FrmBusquedaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEmpleado.Designer.cs">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,8 +103,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmBusquedaUsuario.resx">
+      <DependentUpon>FrmBusquedaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleado.resx">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -118,5 +138,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

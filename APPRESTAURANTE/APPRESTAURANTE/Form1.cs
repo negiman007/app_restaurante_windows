@@ -19,7 +19,6 @@ namespace APPRESTAURANTE
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Hola");
             Proveedores proveedores = new Proveedores();
             proveedores.Show();
         }
@@ -28,6 +27,22 @@ namespace APPRESTAURANTE
         {
             frmEmpleado empleadoVista = new frmEmpleado();
             empleadoVista.Show();
+        }
+
+        private void tsmiUsuario_Click(object sender, EventArgs e)
+        {
+            FrmBusquedaUsuario frmBusquedaUsuario = new FrmBusquedaUsuario();
+            frmBusquedaUsuario.Show();
+        }
+
+        private void tsmiMesa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stmiPedidos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
