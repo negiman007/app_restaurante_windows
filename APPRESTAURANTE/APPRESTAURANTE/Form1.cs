@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using APPRESTAURANTE.Formularios;
 
 namespace APPRESTAURANTE
 {
@@ -42,7 +36,8 @@ namespace APPRESTAURANTE
 
         private void stmiPedidos_Click(object sender, EventArgs e)
         {
-
+            frmPedido pedido = new frmPedido();
+            pedido.Show();
         }
     }
 }

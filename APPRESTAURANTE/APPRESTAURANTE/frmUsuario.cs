@@ -84,7 +84,7 @@ namespace APPRESTAURANTE
                 usuario.IdRol = (int)cboRol.SelectedIndex;
                 usuario.Estado = true;
 
-                listaNodoUsuario.InsertarObjeto(usuario);
+                listaNodoUsuario.insertarAlInicioListaSimple(usuario);
                 SeteoCodigo();
             }
             

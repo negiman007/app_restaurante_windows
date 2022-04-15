@@ -50,11 +50,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDatos\BaseDatos.cs" />
+    <Compile Include="Entidades\Constantes\Constants.cs" />
     <Compile Include="Entidades\Empleado.cs" />
     <Compile Include="Entidades\Enum\Estado.cs" />
     <Compile Include="Entidades\Enum\Rol.cs" />
     <Compile Include="Entidades\Enum\TipoDocumento.cs" />
     <Compile Include="Entidades\Lista.cs" />
+    <Compile Include="Formularios\frmPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmPedido.Designer.cs">
+      <DependentUpon>frmPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nodo\ListaGenerica.cs" />
     <Compile Include="Nodo\NodoGenerico.cs" />
     <Compile Include="Entidades\Pedido.cs" />
@@ -102,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmPedido.resx">
+      <DependentUpon>frmPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBusquedaUsuario.resx">
       <DependentUpon>FrmBusquedaUsuario.cs</DependentUpon>
