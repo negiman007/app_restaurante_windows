@@ -70,28 +70,28 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(207, 26);
             this.toolStripMenuItem1.Text = "Proveedores";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // tsmiEmpleado
             // 
             this.tsmiEmpleado.Name = "tsmiEmpleado";
-            this.tsmiEmpleado.Size = new System.Drawing.Size(224, 26);
+            this.tsmiEmpleado.Size = new System.Drawing.Size(207, 26);
             this.tsmiEmpleado.Text = "Empleado";
             this.tsmiEmpleado.Click += new System.EventHandler(this.tsmiEmpleado_Click);
             // 
             // tsmiUsuario
             // 
             this.tsmiUsuario.Name = "tsmiUsuario";
-            this.tsmiUsuario.Size = new System.Drawing.Size(224, 26);
+            this.tsmiUsuario.Size = new System.Drawing.Size(207, 26);
             this.tsmiUsuario.Text = "Usuarios";
             this.tsmiUsuario.Click += new System.EventHandler(this.tsmiUsuario_Click);
             // 
             // tsmiMesa
             // 
             this.tsmiMesa.Name = "tsmiMesa";
-            this.tsmiMesa.Size = new System.Drawing.Size(224, 26);
+            this.tsmiMesa.Size = new System.Drawing.Size(207, 26);
             this.tsmiMesa.Text = "Registro de Mesa";
             this.tsmiMesa.Click += new System.EventHandler(this.tsmiMesa_Click);
             // 
@@ -106,7 +106,7 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 26);
             this.toolStripMenuItem2.Text = "Menu del Día";
             // 
             // consumoToolStripMenuItem
@@ -126,7 +126,7 @@
             // stmiPedidos
             // 
             this.stmiPedidos.Name = "stmiPedidos";
-            this.stmiPedidos.Size = new System.Drawing.Size(224, 26);
+            this.stmiPedidos.Size = new System.Drawing.Size(194, 26);
             this.stmiPedidos.Text = "Generar Pedido";
             this.stmiPedidos.Click += new System.EventHandler(this.stmiPedidos_Click);
             // 
@@ -134,6 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

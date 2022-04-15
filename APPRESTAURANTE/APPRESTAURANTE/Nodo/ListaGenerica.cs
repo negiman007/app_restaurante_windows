@@ -77,7 +77,6 @@ namespace APPRESTAURANTE.Nodo
             File.WriteAllText(ruta, texto);
         }
 
-
         public Boolean EstaVacia()
         {
             if (inicio == null)
@@ -117,7 +116,7 @@ namespace APPRESTAURANTE.Nodo
             return listaGenerica;
         }
 
-        public void InsertarObjeto(T objeto)
+        public void insertarAlInicioListaSimple(T objeto)
         {
             NodoGenerico<T> actual = new NodoGenerico<T>(objeto, null, null);
             if (EstaVacia())
@@ -136,7 +135,7 @@ namespace APPRESTAURANTE.Nodo
             }
         }
 
-        public void InsertarObjetoAlFinal(T objeto)
+        public void insertarAlFinalObjeto(T objeto)
         {
             NodoGenerico<T> actual;
             NodoGenerico<T> t = inicio;
@@ -152,6 +151,24 @@ namespace APPRESTAURANTE.Nodo
                     t = t.sgte;
                 }
                 t.sgte = actual;
+            }
+        }
+
+        public void eliminarElementoPorValor(T objeto, string valor) 
+        {
+            NodoGenerico<T> actual = inicio;
+            int contador = 0;
+
+            if (inicio != null)
+            {
+                while (actual != null)
+                {
+                    contador++;
+                    //if(actual.objeto.GetType() == typeof(T)){}
+                    if (actual.objeto.GetType() == typeof(T))
+                    {
+                    }
+                }
             }
         }
 
@@ -203,7 +220,8 @@ namespace APPRESTAURANTE.Nodo
                         inicio = actual;
                     }
                 }
-            } else
+            }
+            else
             {
                 while (tempoLista != null)
                 {
@@ -216,7 +234,6 @@ namespace APPRESTAURANTE.Nodo
 
         public NodoGenerico<T> GenerarListaGenerico()
         {
-            List<T> listaGenerica = new List<T>();
             inicio = null;
             if (listaObjeto.Count > 0)
             {
@@ -247,6 +264,7 @@ namespace APPRESTAURANTE.Nodo
         public void Eliminar(Func<T, bool> criterio)
         {
             listaObjeto = listaObjeto.Where(x => !criterio(x)).ToList();
+            GuardarGenerico(listaObjeto);
         }
 
         public void Actualizar(Func<T, bool> criterio, T nuevo)
@@ -256,6 +274,34 @@ namespace APPRESTAURANTE.Nodo
                 if (criterio(x)) x = nuevo;
                 return x;
             }).ToList();
+            GuardarGenerico(listaObjeto);
         }
+
+        /********************************************************* LISTAS DOBLES **********************************************************/
+        public void insertarAlInicioListaDoble(T objeto) 
+        {
+            NodoGenerico<T> actual = new NodoGenerico<T>(objeto, null, null);
+            actual.sgte = inicio;
+
+            if (inicio != null)
+            {
+                inicio.ant = actual;
+            }
+            inicio = actual;
+        }
+
+        public void insertarAlFinalListaDoble(T entity) 
+        {
+            NodoGenerico<T> actual = new NodoGenerico<T> (entity, null, null);
+            NodoGenerico<T> temporal = inicio;
+
+            while(temporal.sgte != null)
+            {
+                temporal = temporal.sgte;
+            }
+            actual.ant = temporal;
+            temporal.sgte = actual;
+        }
+
     }
 }

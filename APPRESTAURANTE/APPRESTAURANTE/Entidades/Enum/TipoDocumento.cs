@@ -8,7 +8,6 @@ namespace APPRESTAURANTE.Entidades.Enum
 {
     public enum TipoDocumento
     {
-        SELECCIONE =0,
         DNI = 1,
         CARNET_EXTRANJERIA = 2,
     }
