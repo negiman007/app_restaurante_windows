@@ -29,5 +29,16 @@ namespace APPRESTAURANTE
             frmEmpleado empleadoVista = new frmEmpleado();
             empleadoVista.Show();
         }
+
+        private void tsmiUsuario_Click(object sender, EventArgs e)
+        {
+            FrmBusquedaUsuario frmBusquedaUsuario = new FrmBusquedaUsuario();
+            frmBusquedaUsuario.Show();
+        }
+
+        private void tsmiMesa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
