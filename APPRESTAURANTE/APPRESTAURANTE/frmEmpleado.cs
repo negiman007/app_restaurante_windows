@@ -264,7 +264,6 @@ namespace APPRESTAURANTE
                 fila.Cells.Add(new DataGridViewTextBoxCell() { Value = ((empleado.estado) ? "Activo" : "Inactivo") });
                 dgvEmpleados.Rows.Add(fila);
             }
-
         }
 
         private void eliminarElementoPorValor(string numeroDocumento)

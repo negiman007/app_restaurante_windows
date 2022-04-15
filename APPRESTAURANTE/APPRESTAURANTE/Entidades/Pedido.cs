@@ -9,6 +9,7 @@ namespace APPRESTAURANTE.Entidades
     public class Pedido
     {
         public int idPedido { get; set; }
+
         public string fechaPedido { get; set; }
 
         public double totalPedido { get; set; }
@@ -23,7 +24,12 @@ namespace APPRESTAURANTE.Entidades
 
         public int estadoPago { get; set; }
 
+        public IEnumerable<PedidoDetalle> pedidoDetalles { get; set; }
 
+        public Pedido()
+        {
+
+        }
 
     }
 }
