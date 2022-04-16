@@ -16,7 +16,7 @@ namespace APPRESTAURANTE.Entidades
 
         public int idMesa { get; set; }
 
-        public string tipoPago { get; set; }
+        public int tipoPago { get; set; }
 
         public int idEmpleado { get; set; }
 
@@ -26,9 +26,22 @@ namespace APPRESTAURANTE.Entidades
 
         public IEnumerable<PedidoDetalle> pedidoDetalles { get; set; }
 
+        public Pedido sgte { get; set; }
+
         public Pedido()
         {
-
+            sgte = null;
+        }
+        public Pedido(int idPedido, string fechaPedido, double totalPedido, int idMesa, int tipoPago, int idEmpleado, int idUsuario, int estadoPago)
+        {
+            this.idPedido = idPedido;
+            this.fechaPedido = fechaPedido;
+            this.totalPedido = totalPedido;
+            this.tipoPago = tipoPago;
+            this.idEmpleado = idEmpleado;
+            this.idUsuario = idUsuario;
+            this.estadoPago = estadoPago;
+            this.sgte = null;
         }
 
     }

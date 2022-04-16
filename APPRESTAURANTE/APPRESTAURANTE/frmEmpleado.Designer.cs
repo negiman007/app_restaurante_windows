@@ -61,8 +61,8 @@
             this.cboTipoDocumento = new System.Windows.Forms.ComboBox();
             this.gbDatos = new System.Windows.Forms.GroupBox();
             this.gbAcciones = new System.Windows.Forms.GroupBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBusquedaPorValor = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.gbDatos.SuspendLayout();
             this.gbAcciones.SuspendLayout();
@@ -221,6 +221,7 @@
             // 
             // dgvEmpleados
             // 
+            this.dgvEmpleados.AllowUserToAddRows = false;
             this.dgvEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -389,16 +390,6 @@
             this.gbAcciones.TabStop = false;
             this.gbAcciones.Text = "Acciones";
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(869, 42);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(164, 46);
-            this.btnEliminar.TabIndex = 21;
-            this.btnEliminar.Text = "EliminarRegistro";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // btnBusquedaPorValor
             // 
             this.btnBusquedaPorValor.Location = new System.Drawing.Point(234, 42);
@@ -408,6 +399,16 @@
             this.btnBusquedaPorValor.Text = "Busqueda Por Documento";
             this.btnBusquedaPorValor.UseVisualStyleBackColor = true;
             this.btnBusquedaPorValor.Click += new System.EventHandler(this.btnBusquedaPorValor_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(869, 42);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(164, 46);
+            this.btnEliminar.TabIndex = 21;
+            this.btnEliminar.Text = "EliminarRegistro";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmEmpleado
             // 
@@ -420,7 +421,7 @@
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.lblEtiqueta);
             this.Name = "frmEmpleado";
-            this.Text = "frmEmpleado";
+            this.Text = "Empleados";
             this.Load += new System.EventHandler(this.frmEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.gbDatos.ResumeLayout(false);

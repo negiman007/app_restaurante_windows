@@ -15,11 +15,13 @@ namespace APPRESTAURANTE.Entidades.Constantes
         private const string TABLA_MENU = "bdMenu.json";
         private const string TABLA_MENU_DETALLE = "bdMenuDetalle.json";
         private const string TABLA_PEDIDO = "bdPedido.json";
+        private const string TABLA_PEDIDO_DETALLE = "bdPedidoDetalle.json";
         public static string FUENTE_EMPLEADO = $"{RUTA}{TABLA_EMPLEADO}";
         public static string FUENTE_USUARIO = $"{RUTA}{TABLA_USUARIO}";
         public static string FUENTE_MENU = $"{RUTA}{TABLA_MENU}";
         public static string FUENTE_MENU_DETALLE = $"{RUTA}{TABLA_MENU_DETALLE}";
         public static string FUENTE_MESA = $"{RUTA}{TABLA_MESA}";
         public static string FUENTE_PEDIDO = $"{RUTA}{TABLA_PEDIDO}";
+        public static string FUENTE_PEDIDO_DETALLE = $"{RUTA}{TABLA_PEDIDO_DETALLE}";
     }
 }

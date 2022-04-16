@@ -53,7 +53,7 @@ namespace APPRESTAURANTE
             }
             else if (dialog == DialogResult.Cancel)
             {
-                MessageBox.Show("You have clicked Cancel Button");
+                MessageBox.Show("Ha hecho clic en el botón Cancelar");
             }
         }
 
