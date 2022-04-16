@@ -18,7 +18,7 @@ namespace APPRESTAURANTE.Formularios
         ListaGenerica<Mesa> nodoMesa = new ListaGenerica<Mesa>(Constants.FUENTE_MESA);
         ListaGenerica<Pedido> nodoPedido = new ListaGenerica<Pedido>(Constants.FUENTE_PEDIDO);
         ListaGenerica<PedidoDetalle> nodoPedidoDetalle = new ListaGenerica<PedidoDetalle>(Constants.FUENTE_PEDIDO_DETALLE);
-        int contadorPedido = 1;
+        int numerador = 1;
         public frmPedido()
         {
             InitializeComponent();
@@ -69,7 +69,7 @@ namespace APPRESTAURANTE.Formularios
                 int codigoEmpleado = 0;
                 int codigoMesa = 0;
                 PedidoDetalle pedidoDetalle = new PedidoDetalle();
-                pedidoDetalle.idPedidoDetalle = contadorPedido;
+                pedidoDetalle.idPedidoDetalle = obtenerUltimoIdPedidoDet(numerador);
                 pedidoDetalle.idPedido = int.Parse(txtNumeroPedido.Text);
                 pedidoDetalle.idMenuDetalle = int.Parse(cboMenu.SelectedValue.ToString());
                 pedidoDetalle.menuDetalle = new MenuDetalle();
@@ -81,7 +81,7 @@ namespace APPRESTAURANTE.Formularios
                 codigoMesa = int.Parse(cboMesa.SelectedValue.ToString());
                 codigoEmpleado = int.Parse(cboEmpleado.SelectedValue.ToString());
                 nodoPedidoDetalle.insertarAlFinalListaDoble(pedidoDetalle);
-                contadorPedido = contadorPedido + 1;
+                numerador = numerador + 1;
 
                 refrescarGrillaConListaSimple(nodoPedidoDetalle.inicio, codigoEmpleado, codigoMesa);
                 deshabilitarMesaYEmpleado(false);
@@ -110,6 +110,7 @@ namespace APPRESTAURANTE.Formularios
                     pedido.idEmpleado = int.Parse(cboEmpleado.SelectedValue.ToString()); ;
                     pedido.idUsuario = 1; 
                     pedido.estadoPago = 0;
+                    //pedido.pedidoDetalles = new List<PedidoDetalle>();                    
                     nodoPedido.insertarAlFinalListaDoble(pedido);
                     ///Guardamos los datos del pedido en el archivo JSON
                     nodoPedido.listaObjeto.Add(pedido);
@@ -253,7 +254,9 @@ namespace APPRESTAURANTE.Formularios
         {
             cboEmpleado.SelectedIndex = 0;
             cboMesa.SelectedIndex = 0;
+            txtTotal.Text = String.Empty;
         }
+
         private void LimpiarDatosDetalle()
         {
             cboTipo.SelectedIndex = 0;
@@ -460,6 +463,18 @@ namespace APPRESTAURANTE.Formularios
                     nodoPedidoDetTemp = nodoPedidoDetTemp.sgte;
                 }
             }
+        }
+
+        private int obtenerUltimoIdPedidoDet(int numerador)
+        {
+            int contadorPedido = 0;
+            if (nodoPedidoDetalle.listaObjeto.Count > 0)
+            {
+                contadorPedido = nodoPedidoDetalle.listaObjeto.Count + numerador;
+            } else {
+                contadorPedido = contadorPedido + numerador;
+            }
+            return contadorPedido;
         }
     }
 }
