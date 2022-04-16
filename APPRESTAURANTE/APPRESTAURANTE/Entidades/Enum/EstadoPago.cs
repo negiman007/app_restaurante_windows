@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace APPRESTAURANTE.Entidades.Enum
 {
-    public enum TipoPago
+    public enum EstadoPago
     {
-        Efectivo = 1,
-        Visa = 2,
-        Mastercard = 3,
-        Otros = 4,
+        PENDIENTE = 0,
+        CANCELADO = 1,
     }
 }

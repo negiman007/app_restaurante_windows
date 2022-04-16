@@ -12,7 +12,6 @@ namespace APPRESTAURANTE.Entidades
         public string fecha { get; set; }
         public int idUsuario { get; set; }
         public string fecha_registro { get; set; }
-
         public Menu sgte { get; set; }
 
         public Menu()

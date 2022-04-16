@@ -53,6 +53,7 @@
     <Compile Include="Entidades\Constantes\Constants.cs" />
     <Compile Include="Entidades\Empleado.cs" />
     <Compile Include="Entidades\Enum\Estado.cs" />
+    <Compile Include="Entidades\Enum\EstadoPago.cs" />
     <Compile Include="Entidades\Enum\Rol.cs" />
     <Compile Include="Entidades\Enum\TipoDocumento.cs" />
     <Compile Include="Entidades\Enum\TipoPago.cs" />
@@ -63,6 +64,12 @@
     <Compile Include="Entidades\Mesa.cs" />
     <Compile Include="Entidades\PedidoDetalle.cs" />
     <Compile Include="Entidades\Tipo.cs" />
+    <Compile Include="Formularios\frmCajaConsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCajaConsumo.Designer.cs">
+      <DependentUpon>frmCajaConsumo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +123,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCajaConsumo.resx">
+      <DependentUpon>frmCajaConsumo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmPedido.resx">
       <DependentUpon>frmPedido.cs</DependentUpon>

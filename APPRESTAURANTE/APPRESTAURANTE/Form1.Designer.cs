@@ -39,6 +39,7 @@
             this.consumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stmiPedidos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCajaPedido = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,6 +112,8 @@
             // 
             // consumoToolStripMenuItem
             // 
+            this.consumoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiCajaPedido});
             this.consumoToolStripMenuItem.Name = "consumoToolStripMenuItem";
             this.consumoToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.consumoToolStripMenuItem.Text = "Consumo";
@@ -129,6 +132,13 @@
             this.stmiPedidos.Size = new System.Drawing.Size(194, 26);
             this.stmiPedidos.Text = "Generar Pedido";
             this.stmiPedidos.Click += new System.EventHandler(this.stmiPedidos_Click);
+            // 
+            // tsmiCajaPedido
+            // 
+            this.tsmiCajaPedido.Name = "tsmiCajaPedido";
+            this.tsmiCajaPedido.Size = new System.Drawing.Size(224, 26);
+            this.tsmiCajaPedido.Text = "Caja de Pedidos";
+            this.tsmiCajaPedido.Click += new System.EventHandler(this.tsmiCajaPedido_Click);
             // 
             // Form1
             // 
@@ -160,6 +170,7 @@
         private System.Windows.Forms.ToolStripMenuItem consumoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stmiPedidos;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCajaPedido;
     }
 }
 

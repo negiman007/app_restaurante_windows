@@ -39,5 +39,11 @@ namespace APPRESTAURANTE
             frmPedido pedido = new frmPedido();
             pedido.Show();
         }
+
+        private void tsmiCajaPedido_Click(object sender, EventArgs e)
+        {
+            frmCajaConsumo frmCajaConsumo = new frmCajaConsumo();
+            frmCajaConsumo.Show();
+        }
     }
 }
