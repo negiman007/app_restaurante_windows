@@ -59,6 +59,7 @@ namespace APPRESTAURANTE
             cboEmpleado.DisplayMember = "nombre";
 
         }
+
         private void CargarValores()
         {
             cboRol.Items.Add("---Seleccion---");

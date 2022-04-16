@@ -292,15 +292,22 @@ namespace APPRESTAURANTE.Nodo
 
         public void insertarAlFinalListaDoble(T entity) 
         {
-            NodoGenerico<T> actual = new NodoGenerico<T> (entity, null, null);
+            NodoGenerico<T> actual = new NodoGenerico<T>(entity, null, null);
             NodoGenerico<T> temporal = inicio;
 
-            while(temporal.sgte != null)
+            if (EstaVacia())
             {
-                temporal = temporal.sgte;
+                inicio = actual;
             }
-            actual.ant = temporal;
-            temporal.sgte = actual;
+            else 
+            {
+                while (temporal.sgte != null)
+                {
+                    temporal = temporal.sgte;
+                }
+                actual.ant = temporal;
+                temporal.sgte = actual;
+            }
         }
 
     }
